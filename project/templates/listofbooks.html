@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block title %}
+My books
+{% endblock %}
+
+{% block main %}
+    <br><h4>Books available with the title and author entered:</h4><br>
+    <form action="/listofbooks" method="POST">
+        <table class="table table-striped, center" style="width: 80%">
+            <thead>
+                <tr>
+                    <th class="text-start">Title</th>
+                    <th class="text-start">Subtitle</th>
+                    <th class="text-start">Author</th>
+                    <th class="text-end">ISBN</th>
+                    <th class="text-end">Number of pages</th>
+                    <th class="text-end">Publication date</th>
+                    <th class="text-end">Select book</th>
+                </tr>
+            </thead>
+            <tbody>
+                {%for stock in stocks%}
+                <tr>
+                    <td id="title" class="text-start">{{ stock.title }}</td>
+                    <td id="subtitle" class="text-start">{{ stock.subtitle }}</td>
+                    <td id="author" class="text-start">{{ stock.author }}</td>
+                    <td id="isbn" class="text-end">{{ stock.ISBN }}</td>
+                    <td id="pages" class="text-end">{{ stock.pages }}</td>
+                    <td id="date" class="text-end">{{ stock.date }}</td>
+                    <td class="text-end"><button class="add-library" type="submit">Add to library</button></td>
+                </tr>
+                {%endfor%}
+            </tbody>
+        </table>
+    </form>
+    <script type="text/javascript">
+    $(document).ready(function {
+        $(".add-library").click(function() {
+                var title = $(this).closest("tr").getElementById('title').text();
+                var author = $(this).closest("tr").getElementById('author').text();
+                var isbn = $(this).closest("tr").getElementById('isbn').text();
+                var pages = $(this).closest("tr").getElementById('pages').text();
+                let book = document.createElemetn("book");
+                book.append(title, author, isbn, pages);
+                console.log(book.childNodes);
+                $.ajax({
+                    type: "POST",
+                    contentType: "application/json;charset=utf-8",
+                    url: "/listofbooks/?book=" + book,
+                    traditional: "true",
+                    data: JSON.stringify({book}),
+                    dataType: "json"
+                    });
+            });
+        })
+    </script>
+
+
+{% endblock %}
+

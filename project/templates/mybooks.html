@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+My books
+{% endblock %}
+
+{% block main %}
+    <form action="/mybooks" method="POST">
+        <h5>Add a book to your library</h5><br>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="book" name="book" placeholder="Title" type="text"><br>
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="author" name="author" placeholder="Author" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add to library</button>
+    </form>
+    <br><h4>My library</h4><br>
+    <table class="table table-striped, center" style="width: 80%">
+        <thead>
+            <tr>
+                <th class="text-start">Title</th>
+                <th class="text-start">Author</th>
+                <th class="text-end">ISBN</th>
+                <th class="text-end">Number of pages</th>
+                <th class="text-end">Rating</th>
+                <th class="text-end">Comments</th>
+            </tr>
+        </thead>
+        <tbody>
+            {%for stock in stocks%}
+            <tr>
+                <td class="text-start">{{ stock.title }}</td>
+                <td class="text-start">{{ stock.author }}</td>
+                <td class="text-end">{{ stock.ISBN }}</td>
+                <td class="text-end">{{ stock.pages }}</td>
+                <td class="text-end">{{ stock.rating }}</td>
+                <td class="text-end">{{ stock.comments }}</td>
+            </tr>
+            {%endfor%}
+        </tbody>
+    </table>
+
+
+{% endblock %}

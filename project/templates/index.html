@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Homepage
+{% endblock %}
+
+{% block main %}
+
+        <h1 class="text-center">Hello, readers of the world!</h1>
+        <br><h5>Welcome to "My online library"! Creating an account is all you need to be able to store the list of all the books you read, add comments for each reading and rate books to have your personal rating.</h5><br>
+
+        <div class="row">
+          <div class="col">
+            <div class="card text-bg-dark">
+              <img src="static/DSC_0470.JPG" class="card-img-top" alt="walk">
+
+              <div class="card-img-overlay">
+                <h5 class="card-title">New to this website?</h5>
+                <p class="card-text">It will just take a few seconds to get you started! Follow the link and then pick a username and password to start your library.</p>
+                <a href="#" class="btn btn-primary">Create an account</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="static/DSC_0470.JPG" class="card-img-top" alt="walk">
+
+              <div class="card-body">
+                <h5 class="card-title">Already a member?</h5>
+                <p class="card-text">Log in to your library to add new books, reviews, ratings on your last read.</p>
+                <a href="#" class="btn btn-primary">Log In</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card">
+              <img src="static/DSC_0470.JPG" class="card-img-top" alt="walk">
+
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}
+

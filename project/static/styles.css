@@ -1,0 +1,111 @@
+/*Change the size of the carousel*/
+#carousel .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+    height: 50vh;
+}
+
+/*.card-img-top{
+    width:200px;
+}
+.card{
+    width:200px;
+}*/
+
+/*Change the style of the headers*/
+.nav .nav-item {
+    color: black;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+}
+
+.nav .nav-item a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.nav .nav-item a:hover {
+    background: rgba(155,161,181,0.3);
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    background: rgba(155,161,181,0.3);
+    text-decoration: none;
+    color: black;
+}
+
+
+/*Footer settings*/
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(155,161,181,0.3);
+    color: black;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+ }
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
